@@ -2,6 +2,7 @@ import styled from 'styled-components/macro';
 import Header from './Header';
 import Footer from './Footer';
 import { Switch, Route } from 'react-router-dom';
+import Counter from './Counter';
 
 export default function App() {
     return (
@@ -10,7 +11,9 @@ export default function App() {
                 <Header headline="onemoreminiround" />
                 <PageWrapper>
                     <Switch>
-                        <Route path="/click">State</Route>
+                        <Route path="/click">
+                            <Counter />
+                        </Route>
                         <Route path="/characters">Characters</Route>
                         <Route path="/locations">Locations</Route>
                         <Route path="/">Home</Route>
@@ -23,6 +26,9 @@ export default function App() {
 }
 
 const PageWrapper = styled.main`
+    display: grid;
+    gap: 5px;
+    place-items: center;
     background-color: #e76f51;
 `;
 
