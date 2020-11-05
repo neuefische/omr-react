@@ -14,7 +14,7 @@ export default function Characters() {
     return (
         <ImageWrapper>
             {characters.map((character) => {
-                return <img key={character.id} src={character.image} />;
+                return <img key={character.id} src={character.image} alt="" />;
             })}
         </ImageWrapper>
     );
