@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import styled from 'styled-components/macro';
+import Header from './Header';
+import Page from './Page';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default function App() {
+    return (
+        <AppContainer>
+            <Minipage>
+                <Header />
+                <Page />
+            </Minipage>
+        </AppContainer>
+    );
 }
 
-export default App;
+const Minipage = styled.div`
+    width: 60%;
+    max-width: 470px;
+    height: 35%;
+    display: flex;
+    flex-flow: column nowrap;
+`;
+
+const AppContainer = styled.div`
+    height: 100vh;
+    margin: 0;
+    display: grid;
+    place-items: center;
+    background-color: #264653;
+    text-align: center;
+`;
