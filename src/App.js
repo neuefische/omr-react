@@ -1,24 +1,25 @@
 import styled from 'styled-components/macro';
 import Header from './Header';
 import Page from './Page';
+import Footer from './Footer';
 
 export default function App() {
     return (
         <AppContainer>
             <Minipage>
-                <Header />
+                <Header headline="onemoreminiround" />
                 <Page />
+                <Footer />
             </Minipage>
         </AppContainer>
     );
 }
 
 const Minipage = styled.div`
-    width: 60%;
     max-width: 470px;
-    height: 35%;
-    display: flex;
-    flex-flow: column nowrap;
+    height: 55%;
+    display: grid;
+    grid-template-rows: 5rem auto 3rem;
 `;
 
 const AppContainer = styled.div`
