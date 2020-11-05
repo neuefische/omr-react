@@ -5,12 +5,19 @@ import { Switch, Route } from 'react-router-dom';
 import Counter from './Counter';
 import Characters from './Characters';
 import Location from './Location';
+import { useState } from 'react';
 
 export default function App() {
+    const [headlineText, setHeadlineText] = useState('onemoreminiround');
+
+    function changeHeader(location) {
+        setHeadlineText(location.location);
+    }
+
     return (
         <AppContainer>
             <Minipage>
-                <Header headline="onemoreminiround" />
+                <Header headline={headlineText} />
                 <PageWrapper>
                     <Switch>
                         <Route path="/click">
@@ -20,7 +27,7 @@ export default function App() {
                             <Characters />
                         </Route>
                         <Route path="/locations">
-                            <Location />
+                            <Location onSubmit={changeHeader} />
                         </Route>
                         <Route path="/">Home</Route>
                     </Switch>
