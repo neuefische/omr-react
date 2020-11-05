@@ -3,6 +3,7 @@ import Header from './Header';
 import Footer from './Footer';
 import { Switch, Route } from 'react-router-dom';
 import Counter from './Counter';
+import Characters from './Characters';
 
 export default function App() {
     return (
@@ -14,7 +15,9 @@ export default function App() {
                         <Route path="/click">
                             <Counter />
                         </Route>
-                        <Route path="/characters">Characters</Route>
+                        <Route path="/characters">
+                            <Characters />
+                        </Route>
                         <Route path="/locations">Locations</Route>
                         <Route path="/">Home</Route>
                     </Switch>
